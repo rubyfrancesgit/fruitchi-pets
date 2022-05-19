@@ -1,0 +1,26 @@
+.choose-fruitchi {
+    width: 100vw;
+    height: 100vh;
+    @include center;
+    justify-content: space-evenly;
+
+    &__pet {
+        width: 15rem;
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+
+    &__patting:hover {
+        cursor: pointer;
+    }
+
+    @keyframes floating {
+        0% { transform: translate(0,  0px); }
+        50%  { transform: translate(0, 15px); }
+        100%   { transform: translate(0, -0px); }   
+    }
+}
