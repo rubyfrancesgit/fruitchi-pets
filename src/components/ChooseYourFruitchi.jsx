@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { choosePet } from '../reducers/myFruitchiPet';
 import { useNavigate } from 'react-router-dom';
+import { setBackgroundClasses } from '../reducers/backgroundClasses';
 
 // Media
 import blueberry from '../assets/blueberry.svg';
@@ -17,6 +18,9 @@ function ChooseYourFruitchi() {
   const myFruitchiPet = useSelector((state) => state.myFruitchiPet.value);
   console.log(myFruitchiPet);
 
+  const backgroundClasses = useSelector((state) => state.backgroundClasses.value);
+  console.log(backgroundClasses);
+
   const setChoosenPet = async (thisPet) => {
     console.log('click');
 
@@ -31,8 +35,8 @@ function ChooseYourFruitchi() {
       document.getElementById('strawberry').classList.add("hide");
     }
 
-    // await dispatch(choosePet(thisPet));
-    // console.log(myFruitchiPet);
+    await dispatch(choosePet(thisPet));
+    console.log(myFruitchiPet);
     // navigate('/chosen-pet');
   }
 
@@ -49,7 +53,7 @@ function ChooseYourFruitchi() {
   }
 
   return (
-    <div className="choose-fruitchi">
+    <div className={backgroundClasses}>
       <img className="choose-fruitchi__pet" id="blueberry" src={blueberry} onMouseOver={() => chuffedHover(['blueberry', 'chuffedBlueberry'])} alt="blueberry Fruitchi pet" onClick={() => setChoosenPet('blueberry')} />
       
       <img className="choose-fruitchi__pet hide" src={chuffedBlueberry} id="chuffedBlueberry" onMouseOut={() => chuffedReverseHover(['blueberry', 'chuffedBlueberry'])} alt="blueberry Fruitchi pet" onClick={() => setChoosenPet('blueberry')} />
@@ -65,4 +69,4 @@ function ChooseYourFruitchi() {
   )
 }
 
-export default ChooseYourFruitchi
+export default ChooseYourFruitchi;

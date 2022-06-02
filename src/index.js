@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import myFruitchiPetReducer from './reducers/myFruitchiPet';
+import backgroundClassesReducer from './reducers/backgroundClasses';
 
 const store = configureStore({
   reducer: {
-    myFruitchiPet: myFruitchiPetReducer
+    myFruitchiPet: myFruitchiPetReducer,
+    backgroundClasses: backgroundClassesReducer
   }
 });
 

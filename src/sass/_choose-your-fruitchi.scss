@@ -1,8 +1,22 @@
+// Resets
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
 .choose-fruitchi {
     width: 100vw;
     height: 100vh;
     @include center;
     justify-content: space-evenly;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
     &__pet {
         width: 15rem;
@@ -23,4 +37,16 @@
         50%  { transform: translate(0, 15px); }
         100%   { transform: translate(0, -0px); }   
     }
+}
+
+.green-bg {
+    background-image: url('../assets/green-bg.svg');
+}
+
+.blue-bg {
+    background-image: url('../assets/blue-bg.svg');
+}
+
+.pink-bg {
+    background-image: url('../assets/pink-bg.svg');
 }
